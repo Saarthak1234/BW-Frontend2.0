@@ -138,11 +138,10 @@ export default function HomePage() {
               <h1
                 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 ${zillaSlab.className}`}
               >
-                Premium Quality <span className="text-amber-400">Flour</span> for Every Need
+                Premium Quality Flour for Healthy, <span className="text-amber-400">Homemade</span> Meals
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-gray-100 mb-6 sm:mb-8 leading-relaxed font-circe px-2">
-                From artisan baking to everyday cooking, discover our extensive collection of premium flour varieties.
-                Sourced from the finest grains and milled to perfection for exceptional results every time.
+                From daily meals to special recipes, our premium flours are made from handpicked grains and milled for purity, freshness, and trusted quality.
               </p>
               <Link
                 href="/products"
@@ -165,24 +164,11 @@ export default function HomePage() {
               Our Story
             </h2>
             <p className="text-base sm:text-lg text-gray-900 mb-4 sm:mb-6 font-circe">
-              It all began in 1995, in a tiny corner of Bakery City, with a second-hand mill and a big dream. My
-              parents, both lifelong bakers, wanted to make flour the way it should be—fresh, honest, and full of
-              flavor. We started small, delivering sacks of flour in the back of our old pickup, chatting with every
-              customer along the way.
+              It all began in 1978, when our family built a flour mill from the ground up with a simple belief: flour should be pure, fresh, and made with honesty. What started small soon became a trusted name, as our commitment to quality and hard work helped our flour earn recognition across the city.
             </p>
             <p className="text-sm sm:text-base text-gray-900 mb-4 sm:mb-6 font-circe">
-              Over the years, our family grew—and so did our business. We still believe in the same things: working
-              closely with local farmers, never cutting corners, and always putting people first. Every bag of
-              SuperMarket flour is a little piece of that story.
+              Today, we proudly wholesale wheat throughout the city and offer an exclusive range of premium flours made from carefully selected grains. Though we’ve grown over the years, our values remain the same—working closely with farmers, never cutting corners, and putting people first in everything we do.
             </p>
-            <div className="mt-6 sm:mt-8 border-l-4 border-amber-400 pl-4 sm:pl-6 text-left max-w-2xl mx-auto">
-              <span className={`block text-amber-700 font-semibold mb-2 text-sm sm:text-base ${zillaSlab.className}`}>
-                A note from our founder:
-              </span>
-              <span className="italic text-gray-700 text-base sm:text-lg font-circe">
-                "We're not just selling flour. We're sharing a tradition, one loaf at a time."
-              </span>
-            </div>
           </div>
         </div>
       </section>
@@ -202,16 +188,11 @@ export default function HomePage() {
               </div>
               <div className="w-full lg:w-1/2 text-center lg:text-left lg:pr-6 flex flex-col justify-center p-6 sm:p-8 lg:p-12">
                 <h3 className={`text-2xl sm:text-3xl font-medium text-gray-900 mb-4 sm:mb-6 ${zillaSlab.className}`}>
-                  Premium All-Purpose Flour
+                  MP Wheat Sharbati Flour
                 </h3>
                 <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-base sm:text-lg font-circe">
-                  Perfect for all your baking needs. This versatile flour delivers consistent results whether you're
-                  making bread, cakes, or pastries. Sourced from the finest wheat and milled to perfection.
+                  Made from select Sharbati wheat brought from Madhya Pradesh, this flour is loved for its superior grain size and quality. Carefully milled for purity and freshness, it’s ideal for soft rotis, parathas, puris, and all your daily home-cooked meals.
                 </p>
-                <div className="mb-6 sm:mb-8">
-                  <span className="text-2xl sm:text-3xl font-bold text-amber-400 font-circe">₹12.99</span>
-                  <span className="text-gray-500 ml-2 text-base sm:text-lg font-circe">per 5lb bag</span>
-                </div>
                 <div>
                   <Link href='/products'>
                     <button className="bg-amber-400 text-white py-3 sm:py-4 px-4 hover:bg-gray-800 transition-colors text-base sm:text-lg rounded-sm font-semibold font-circew-1/2  sm:w-auto">
@@ -232,16 +213,11 @@ export default function HomePage() {
               </div>
               <div className="w-full lg:w-1/2 text-center lg:text-left lg:pl-6 flex flex-col justify-center p-6 sm:p-8 lg:p-12">
                 <h3 className={`text-2xl sm:text-3xl font-medium text-gray-900 mb-4 sm:mb-6 ${zillaSlab.className}`}>
-                  Organic Whole Wheat Flour
+                  Black Wheat Flour
                 </h3>
                 <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-base sm:text-lg font-circe">
-                  Stone-ground from organic wheat, this flour adds rich flavor and nutrition to your baked goods.
-                  Perfect for hearty breads and muffins with exceptional taste and texture.
+Made from nutrient-rich black wheat, this flour is packed with antioxidants and fiber. Its lower glycaemic index helps support balanced blood sugar levels, making it suitable for diabetic-friendly diets. Ideal for soft rotis, hearty breads, and healthy home cooking—without compromising on taste.
                 </p>
-                <div className="mb-6 sm:mb-8">
-                  <span className="text-2xl sm:text-3xl font-bold text-amber-400 font-circe">₹15.99</span>
-                  <span className="text-gray-500 ml-2 text-base sm:text-lg font-circe">per 5lb bag</span>
-                </div>
                 <div>
                   <Link href='/products'>
                     <button className="bg-amber-400 text-white py-3 sm:py-4 px-4 hover:bg-gray-800 transition-colors text-base sm:text-lg rounded-sm font-semibold font-circew-1/2  sm:w-auto">
@@ -262,16 +238,11 @@ export default function HomePage() {
               </div>
               <div className="w-full lg:w-1/2 text-center lg:text-left lg:pr-6 flex flex-col justify-center p-6 sm:p-8 lg:p-12">
                 <h3 className={`text-2xl sm:text-3xl font-medium text-gray-900 mb-4 sm:mb-6 ${zillaSlab.className}`}>
-                  High-Protein Bread Flour
+                  Corn Flour (Makka Atta)
                 </h3>
                 <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-base sm:text-lg font-circe">
-                  Specially formulated for bread making with higher protein content. Creates strong gluten structure for
-                  perfect rise and texture in artisan breads and pizza dough.
+ Prepared from quality corn grains, our makka ka atta is valued for its natural taste, fiber content, and easy digestibility. Being gluten-free, it’s a preferred choice for those avoiding wheat, while its plant-based protein and nutrients make it suitable for everyday Indian cooking.
                 </p>
-                <div className="mb-6 sm:mb-8">
-                  <span className="text-2xl sm:text-3xl font-bold text-amber-400 font-circe">₹14.99</span>
-                  <span className="text-gray-800 ml-2 text-base sm:text-lg font-circe">per 5lb bag</span>
-                </div>
                 <div>
                   <Link href='/products'>
                     <button className="bg-amber-400 text-white py-3 sm:py-4 px-4 hover:bg-gray-800 transition-colors text-base sm:text-lg rounded-sm font-semibold font-circew-1/2  sm:w-auto">
@@ -289,12 +260,10 @@ export default function HomePage() {
       <section className="py-16 sm:py-20 lg:py-24 bg-amber-50">
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <h2 className={`text-2xl sm:text-3xl font-semibold text-gray-900 mb-6 ${zillaSlab.className}`}>
-            Nourishing Homes, One Bake at a Time
+            From Our Mill to Your Home
           </h2>
           <p className="text-base sm:text-lg text-gray-700 leading-relaxed font-circe">
-            At the heart of every kitchen lies the promise of warmth, tradition, and togetherness. Whether you're baking for
-            family, friends, or simply yourself, we're honored to be a part of your journey. Thank you for choosing us to be a
-            small yet meaningful ingredient in your story.
+            Every meal tells a story of care, tradition, and togetherness. Whether it’s a simple daily roti or a festive dish made with love, we’re grateful to be part of your kitchen journey. Thank you for choosing flour made with honesty, experience, and a promise of quality you can trust.
           </p>
         </div>
       </section>

@@ -4,10 +4,10 @@ import { prisma } from '@/lib/prisma'
 // GET /api/products/[id] - Fetch a single product by ID
 export async function GET(
   request: NextRequest,
-  { params }: { params:  { name: string } }
+  { params }: { params: Promise<{ name: string }> }
 ) {
   try {
-    const { name } = params
+    const { name } = await params
 
     if (!name) {
       return NextResponse.json(
@@ -52,10 +52,11 @@ export async function GET(
 }
 export async function PATCH(
   request: NextRequest,
-  { params }: { params: { name: string } }
+  { params }: { params: Promise<{ name: string }> }
 ) {
   try {
-    const productName = decodeURIComponent(params.name)
+    const { name } = await params
+    const productName = decodeURIComponent(name)
     const body = await request.json()
     
     // Only include fields that are present in the request
@@ -133,13 +134,14 @@ export async function PATCH(
 // Add this DELETE method to your existing route file
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { name: string } }
+  { params }: { params: Promise<{ name: string }> }
 ) {
   try {
+    const { name } = await params
     // Safely decode the product name
     let productName: string;
     try {
-      productName = decodeURIComponent(params.name);
+      productName = decodeURIComponent(name);
     } catch (decodeError) {
       console.error('URL decode error:', decodeError);
       return NextResponse.json(
