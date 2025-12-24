@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" // Change to "mysql" or "sqlite" if needed
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id               String   @id @default(cuid())
+  name             String   @unique
+  price            Decimal  @db.Decimal(10, 2) // Supports up to 99,999,999.99
+  image            String?  // Optional field for image URL
+  description      String   @db.Text // Full description can be long
+  shortDescription String   @db.VarChar(150) // Limited to 150 characters as shown in UI
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  // Add indexes for better query performance
+  @@map("products")
+}
