@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { Plus } from "lucide-react"
 import { Zilla_Slab } from "next/font/google"
+import PuffLoader from "react-spinners/PuffLoader"
 
 // Configure the Google Font
 const zillaSlab = Zilla_Slab({
@@ -47,6 +48,29 @@ export default function AdminProductsSection() {
 
     fetchProducts()
   }, [])
+
+  if (loading) {
+    return (
+      <div className={`min-h-screen bg-amber-50 py-12 sm:py-16 lg:py-24 ${zillaSlab.variable}`}>
+        <div className="container mx-auto px-4">
+          <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 text-gray-900 ${zillaSlab.className}`}>
+            Our Premium Products
+          </h1>
+          <div className="flex justify-center items-center min-h-[400px]">
+            {/* <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-amber-600"></div> */}
+            <PuffLoader
+            color={"#D97706"}
+            loading={loading}
+            // cssOverride={override}
+            size={80}
+            aria-label="Loading Spinner"
+            data-testid="loader" />
+          </div>
+          
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className={`min-h-screen bg-amber-50 py-12 sm:py-16 lg:py-24 ${zillaSlab.variable}`}>

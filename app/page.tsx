@@ -273,7 +273,7 @@ Made from nutrient-rich black wheat, this flour is packed with antioxidants and 
       <section>
         <footer className="bg-gray-900 text-white py-12 sm:py-16 font-manrope">
           <div className="container px-4">
-            <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-3 sm:gap-8 grid-cols-3 sm:grid-cols-2 lg:grid-cols-3">
               {/* Company Info */}
               <div className="space-y-4 text-center sm:text-left">
                 <div className="flex items-center justify-center sm:justify-start space-x-2">
@@ -281,8 +281,8 @@ Made from nutrient-rich black wheat, this flour is packed with antioxidants and 
                   <span className={`text-xl sm:text-2xl font-bold ${zillaSlab.className}`}>SuperMarket</span>
                 </div>
                 <p className="text-gray-300 font-manrope text-sm sm:text-base">
-                  Your trusted source for premium quality flour and baking ingredients. Serving bakers and cooking
-                  enthusiasts since 1995.
+                  A trusted flour mill delivering pure, high-quality grains and flours for everyday Indian kitchens.
+Serving homes and businesses across the city since 1978.
                 </p>
               </div>
               {/* Quick Links */}
