@@ -22,6 +22,10 @@ const nextConfig: NextConfig = {
         hostname: "marvel-b1-cdn.bc0a.com", // ✅ added this line
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "drive.google.com",
+      },
     ],
   },
 };

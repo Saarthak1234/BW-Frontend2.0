@@ -126,11 +126,6 @@ export default function ProductsSection() {
                   {product.name}
                 </h3>
 
-                {/* Price */}
-                <div className="mb-4">
-                  <span className="text-lg font-bold text-amber-600">₹{Number(product.price).toFixed(2)}</span>
-                </div>
-
                 {/* Short Description */}
                 <div className="mb-4">
                   <p className="text-gray-600 text-sm line-clamp-2 font-circe">

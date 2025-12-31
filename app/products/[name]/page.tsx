@@ -188,13 +188,6 @@ export default function ProductDetailPage() {
                     {product.name}
                   </h1>
 
-                  {/* Price */}
-                  <div className="flex items-center space-x-3">
-                    <span className="text-2xl sm:text-3xl lg:text-4xl font-bold text-amber-600">
-                      ₹{Number(product.price).toFixed(2)}
-                    </span>
-                  </div>
-
                   {/* Short Description */}
                   <div className="border-t border-gray-100 pt-4">
                     <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{product.shortDescription}</p>
