@@ -190,27 +190,6 @@ export default function NewProductForm() {
                 />
                 <p className="text-xs text-gray-500 mt-1">{formData.name.length}/100 characters</p>
               </div>
-
-              {/* Price */}
-              <div className="space-y-2">
-                <div>
-                  <label htmlFor="price" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Price (₹) *
-                  </label>
-                  <input
-                    type="number"
-                    id="price"
-                    name="price"
-                    value={formData.price}
-                    onChange={handleInputChange}
-                    required
-                    min="0"
-                    step="0.01"
-                    className="w-full text-black px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                    placeholder="0.00"
-                  />
-                </div>
-              </div>
             </div>
 
             {/* Right Column */}
