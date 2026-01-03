@@ -97,22 +97,22 @@ const Navbar = () => {
                       </Link>
                       <div className="grid gap-2 mt-2">
                         <Link
-                          href="/products/MP Sharbati Wheat"
+                          href="/products/MP Sharbati Wheat (एमपी गेहूं | MP Gehu)"
                           className="text-sm text-gray-300 hover:text-white transition-colors hover:bg-gray-700 rounded-md p-2"
                         >
-                          MP Sharbati Wheat
+                          MP Sharbati Wheat (एमपी गेहूं | MP Gehu)
                         </Link>
                         <Link
-                          href="/products/Mixture"
+                          href="/products/Multigrain Flour (मिश्रित आटा | Mishrit Atta)"
                           className="text-sm text-gray-300 hover:text-white transition-colors hover:bg-gray-700 rounded-md p-2"
                         >
-                          Mixture
+                          Multigrain Flour (मिश्रित आटा | Mishrit Atta)
                         </Link>
                         <Link
-                          href="/products/Haldi"
+                          href="/products/Black Wheat (काला गेहूं | Kala Gehu)"
                           className="text-sm text-gray-300 hover:text-white transition-colors hover:bg-gray-700 rounded-md p-2"
                         >
-                          Haldi (Grinded)
+                          Black Wheat (काला गेहूं | Kala Gehu)
                         </Link>
                       </div>
                     </div>
@@ -161,22 +161,22 @@ const Navbar = () => {
                     </div>
                     <div className="grid gap-1 mt-3 mr-2">
                       <Link
-                        href="/products/MP Sharbati Wheat"
+                        href="/products/MP Sharbati Wheat (एमपी गेहूं | MP Gehu)"
                         className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-700 hover:shadow-md text-gray-300 hover:text-white focus:bg-gray-700 focus:text-white"
                       >
-                        <div className="text-sm font-medium leading-none">MP Sharbati Wheat</div>
+                        <div className="text-sm font-medium leading-none">MP Sharbati Wheat (एमपी गेहूं | MP Gehu)</div>
                       </Link>
                       <Link
-                        href="/products/Mixture"
+                        href="/products/Multigrain Flour (मिश्रित आटा | Mishrit Atta)"
                         className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-700 hover:shadow-md text-gray-300 hover:text-white focus:bg-gray-700 focus:text-white"
                       >
-                        <div className="text-sm font-medium leading-none">Mixture</div>
+                        <div className="text-sm font-medium leading-none">Multigrain Flour (मिश्रित आटा | Mishrit Atta)</div>
                       </Link>
                       <Link
-                        href="/products/Haldi"
+                        href="/products/Black Wheat (काला गेहूं | Kala Gehu)"
                         className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-700 hover:shadow-md text-gray-300 hover:text-white focus:bg-gray-700 focus:text-white"
                       >
-                        <div className="text-sm font-medium leading-none">Haldi (Grinded)</div>
+                        <div className="text-sm font-medium leading-none">Black Wheat (काला गेहूं | Kala Gehu)</div>
                       </Link>
                       {/* Show admin link in desktop menu when logged in */}
                       {isLoggedIn && (
@@ -198,7 +198,7 @@ const Navbar = () => {
             )}
           </ul>
         </div>
-        <div className="navbar-end">
+        {/* <div className="navbar-end">
           {isLoggedIn ? (
             <button onClick={handleLogout} className="btn bg-gray-800 text-white border-gray-700 hover:bg-gray-700 hover:border-gray-600">
               Logout
@@ -208,7 +208,7 @@ const Navbar = () => {
               Login
             </Link>
           )}
-        </div>
+        </div> */}
       </div>
     </header>
   );
