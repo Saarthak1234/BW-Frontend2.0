@@ -14,6 +14,13 @@ const zillaSlab = Zilla_Slab({
   variable: "--font-zilla-slab",
 })
 
+const optimizeCloudinaryUrl = (url: string, width = 400) => {
+  if (!url || !url.includes('cloudinary.com')) return url
+  
+  // Insert transformations into Cloudinary URL
+  return url.replace('/upload/', `/upload/w_${width},f_auto,q_auto/`)
+}
+
 export default function ProductsSection() {
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
@@ -57,16 +64,14 @@ export default function ProductsSection() {
             Our Premium Products
           </h1>
           <div className="flex justify-center items-center min-h-[400px]">
-            {/* <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-amber-600"></div> */}
             <PuffLoader
-            color={"#D97706"}
-            loading={loading}
-            // cssOverride={override}
-            size={80}
-            aria-label="Loading Spinner"
-            data-testid="loader" />
+              color={"#D97706"}
+              loading={loading}
+              size={80}
+              aria-label="Loading Spinner"
+              data-testid="loader" 
+            />
           </div>
-          
         </div>
       </div>
     )
@@ -108,15 +113,18 @@ export default function ProductsSection() {
               key={product.id}
               className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg hover:border-2 hover:border-amber-400 hover:scale-101 transition-all duration-300 border-2 border-transparent"
             >
-
               {/* Product Image */}
               <div className="relative h-96 sm:h-64 bg-gray-100">
                 <Image
-                  src={product.image || "/placeholder.svg"}
+                  src={optimizeCloudinaryUrl(product.image, 400) || "/placeholder.svg"}
                   alt={product.name}
                   fill
                   className="object-cover"
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"
+                  loading="lazy"
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2YzZjRmNiIvPjwvc3ZnPg=="
+                  quality={75}
                 />
               </div>
 

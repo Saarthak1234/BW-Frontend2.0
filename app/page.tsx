@@ -1,10 +1,11 @@
 "use client"
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { Wheat, Phone, Mail, MapPin, Award, DollarSign, Package } from "lucide-react"
+import { Wheat, Phone, Mail, MapPin, Award, DollarSign, Package, Heart } from "lucide-react"
 import Link from "next/link"
 import { Zilla_Slab } from "next/font/google"
 import Image from "next/image";
+import { PiNumberEightBold, PiNumberSevenBold } from "react-icons/pi";
 
 // Configure the Google Font
 const zillaSlab = Zilla_Slab({
@@ -126,7 +127,7 @@ export default function HomePage() {
               width={1024}
               height={683}
               className="w-full h-full object-cover"
-              priority = {true}
+              priority={true}
             />
 
             {/* FIXED: Reduced z-index from no explicit z-index to z-0 to ensure it stays behind dropdown */}
@@ -216,7 +217,7 @@ export default function HomePage() {
                   Black Wheat Flour
                 </h3>
                 <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-base sm:text-lg font-circe">
-Made from nutrient-rich black wheat, this flour is packed with antioxidants and fiber. Its lower glycaemic index helps support balanced blood sugar levels, making it suitable for diabetic-friendly diets. Ideal for soft rotis, hearty breads, and healthy home cooking—without compromising on taste.
+                  Made from nutrient-rich black wheat, this flour is packed with antioxidants and fiber. Its lower glycaemic index helps support balanced blood sugar levels, making it suitable for diabetic-friendly diets. Ideal for soft rotis, hearty breads, and healthy home cooking—without compromising on taste.
                 </p>
                 <div>
                   <Link href='/products'>
@@ -241,7 +242,7 @@ Made from nutrient-rich black wheat, this flour is packed with antioxidants and 
                   Corn Flour (Makka Atta)
                 </h3>
                 <p className="text-gray-600 mb-6 sm:mb-8 leading-relaxed text-base sm:text-lg font-circe">
- Prepared from quality corn grains, our makka ka atta is valued for its natural taste, fiber content, and easy digestibility. Being gluten-free, it’s a preferred choice for those avoiding wheat, while its plant-based protein and nutrients make it suitable for everyday Indian cooking.
+                  Prepared from quality corn grains, our makka ka atta is valued for its natural taste, fiber content, and easy digestibility. Being gluten-free, it’s a preferred choice for those avoiding wheat, while its plant-based protein and nutrients make it suitable for everyday Indian cooking.
                 </p>
                 <div>
                   <Link href='/products'>
@@ -272,21 +273,25 @@ Made from nutrient-rich black wheat, this flour is packed with antioxidants and 
       {/* Footer */}
       <section>
         <footer className="bg-gray-900 text-white py-12 sm:py-16 font-manrope">
-          <div className="container px-4">
-            <div className="grid gap-3 sm:gap-8 grid-cols-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="container mx-auto px-4 max-w-7xl">
+            <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
               {/* Company Info */}
-              <div className="space-y-4 text-center sm:text-left">
-                <div className="flex items-center justify-center sm:justify-start space-x-2">
-                  <Wheat className="h-6 w-6 sm:h-8 sm:w-8 text-amber-400" />
-                  <span className={`text-xl sm:text-2xl font-bold ${zillaSlab.className}`}>SuperMarket</span>
+              <div className="space-y-4 text-center">
+                <div className="flex items-center justify-center space-x-2">
+                  <div>
+                    <PiNumberSevenBold className="inline h-7 w-6 text-red-400 " />
+                    <PiNumberEightBold className="inline h-6 w-6 text-red-400 -ml-3" />
+                  </div>
+                  <span className={`text-xl sm:text-2xl font-bold ${zillaSlab.className}`}>Rishi Atta Brand</span>
                 </div>
                 <p className="text-gray-300 font-manrope text-sm sm:text-base">
                   A trusted flour mill delivering pure, high-quality grains and flours for everyday Indian kitchens.
-Serving homes and businesses across the city since 1978.
+                  Serving homes and businesses across the city since 1978.
                 </p>
               </div>
+
               {/* Quick Links */}
-              <div className="space-y-4 text-center sm:text-left">
+              <div className="space-y-4 text-center">
                 <h3 className={`text-base sm:text-lg font-semibold ${zillaSlab.className}`}>Quick Links</h3>
                 <div className="space-y-2 font-manrope text-sm sm:text-base">
                   <Link href="/" className="block text-gray-300 hover:text-white transition-colors">
@@ -295,36 +300,28 @@ Serving homes and businesses across the city since 1978.
                   <Link href="/products" className="block text-gray-300 hover:text-white transition-colors">
                     Products
                   </Link>
-                  <Link href="/about" className="block text-gray-300 hover:text-white transition-colors">
-                    About Us
-                  </Link>
-                  <Link href="/auth/login" className="block text-gray-300 hover:text-white transition-colors">
-                    Login
-                  </Link>
                 </div>
               </div>
+
               {/* Contact Info */}
-              <div className="space-y-4 text-center sm:text-left sm:col-span-2 lg:col-span-2">
+              <div className="space-y-4 text-center">
                 <h3 className={`text-base sm:text-lg font-semibold ${zillaSlab.className}`}>Contact Us</h3>
                 <div className="space-y-3 font-manrope text-sm sm:text-base">
-                  <div className="flex items-center justify-center sm:justify-start space-x-3">
+                  <div className="flex items-center justify-center space-x-3">
                     <Phone className="h-4 w-4 sm:h-5 sm:w-5 text-amber-400 flex-shrink-0" />
-                    <span className="text-gray-300">+1 (555) 123-4567</span>
+                    <span className="text-gray-300">+91 98370-78780</span>
                   </div>
-                  <div className="flex items-center justify-center sm:justify-start space-x-3">
-                    <Mail className="h-4 w-4 sm:h-5 sm:w-5 text-amber-400 flex-shrink-0" />
-                    <span className="text-gray-300">info@supermarket.com</span>
-                  </div>
-                  <div className="flex items-center justify-center sm:justify-start space-x-3">
+                  <div className="flex items-center justify-center space-x-3">
                     <MapPin className="h-4 w-4 sm:h-5 sm:w-5 text-amber-400 flex-shrink-0" />
-                    <span className="text-gray-300">123 Flour Street, Bakery City, BC 12345</span>
+                    <span className="text-gray-300">Bazar Ganj, Moradabad-244001</span>
                   </div>
                 </div>
               </div>
             </div>
+
             <div className="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center font-manrope">
               <p className="text-gray-400 text-sm sm:text-base">
-                © {new Date().getFullYear()} SuperMarket. All rights reserved.
+                Made with Love <Heart className="inline w-4 h-4 text-red-500" /> by Saarthak
               </p>
             </div>
           </div>

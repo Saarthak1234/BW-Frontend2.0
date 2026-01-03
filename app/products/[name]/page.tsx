@@ -34,7 +34,7 @@ export default function ProductDetailPage() {
 
         if (!response.ok) {
           if (response.status === 404) {
-            setError('Product not found')
+            setError(error)
           } else {
             throw new Error(`HTTP error! status: ${response.status}`)
           }
@@ -50,7 +50,7 @@ export default function ProductDetailPage() {
         }
       } catch (err) {
         console.error('Error fetching product:', err)
-        setError('Failed to load product. Please try again later.')
+        setError(error)
       } finally {
         setLoading(false)
       }
@@ -75,7 +75,7 @@ export default function ProductDetailPage() {
           </button>
         </div>
 
-        <div className="flex justify-center items-center min-h-[400px]">
+        <div className="flex justify-center items-center min-h-100">
           {/* <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-amber-600"></div> */}
           <PuffLoader
             color={"#D97706"}
@@ -103,7 +103,7 @@ export default function ProductDetailPage() {
           </button>
         </div>
 
-        <div className="flex items-center justify-center min-h-[400px] p-4">
+        <div className="flex items-center justify-center min-h-100 p-4">
           <div className="text-center max-w-md w-full">
             <h1 className={`text-xl sm:text-2xl font-bold text-gray-900 mb-4 ${zillaSlab.className}`}>
               {error === 'Product not found' ? 'Product Not Found' : 'Error Loading Product'}
@@ -156,9 +156,10 @@ export default function ProductDetailPage() {
             <div className="flex flex-col lg:flex-row bg-amber-50">
               {/* Image Section */}
               <div className="w-full lg:w-1/2">
-                <div className="aspect-square sm:aspect-[4/3] lg:aspect-square relative bg-gray-100">
+                <div className="aspect-square sm:aspect-4/3 lg:aspect-square relative bg-gray-100">
                   {product.image ? (
                     <Image
+                      // unoptimized
                       src={product.image}
                       alt={product.name}
                       fill
