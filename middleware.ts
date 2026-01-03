@@ -41,15 +41,16 @@ export async function middleware(request: NextRequest) {
       // Verify the JWT token
       const secret = new TextEncoder().encode(process.env.JWT_SECRET)
       const { payload } = await jwtVerify(token, secret)
-      
+
       console.log(`Token valid for ${pathname}, user: ${payload.email}`)
-      
+
       // Token is valid, allow access
       return NextResponse.next()
     } catch (error) {
       // Token is invalid or expired, redirect to login
-      console.error(`Token verification failed for ${pathname}:`, error.message)
-      
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+      console.error(`Token verification failed for ${pathname}:`, errorMessage)
+
       // Clear the invalid cookie
       const response = NextResponse.redirect(new URL('/admin/login', request.url))
       response.cookies.set('auth-token', '', {
@@ -59,7 +60,7 @@ export async function middleware(request: NextRequest) {
         maxAge: 0,
         path: '/'
       })
-      
+
       return response
     }
   }
