@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Suspense } from 'react';
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import GoogleAnalytics from "@/components/GoogleAnalytics/GoogleAnalytics";
@@ -30,7 +31,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-br from-amber-50 via-yellow-50 to-amber-100 min-h-screen`}
       >
-        <GoogleAnalytics />
+        <Suspense fallback={null}>
+          <GoogleAnalytics />
+        </Suspense>
         {children}
       </body>
     </html>
