@@ -15,11 +15,18 @@ const zillaSlab = Zilla_Slab({
   variable: "--font-zilla-slab",
 })
 
+interface Product {
+  id: string | number
+  name: string
+  image: string
+  shortDescription: string
+}
+
 export default function AdminProductsSection() {
 
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -56,7 +63,7 @@ export default function AdminProductsSection() {
           <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 text-gray-900 ${zillaSlab.className}`}>
             Our Premium Products
           </h1>
-          <div className="flex justify-center items-center min-h-[400px]">
+          <div className="flex justify-center items-center min-h-100">
             {/* <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-amber-600"></div> */}
             <PuffLoader
             color={"#D97706"}

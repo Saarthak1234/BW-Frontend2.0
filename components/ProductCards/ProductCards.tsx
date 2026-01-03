@@ -21,10 +21,17 @@ const optimizeCloudinaryUrl = (url: string, width = 400) => {
   return url.replace('/upload/', `/upload/w_${width},f_auto,q_auto/`)
 }
 
+interface Product {
+  id: string | number
+  name: string
+  image: string
+  shortDescription: string
+}
+
 export default function ProductsSection() {
-  const [products, setProducts] = useState([])
+  const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [error, setError] = useState<string | null>(null)
 
   // Fetch products from API
   useEffect(() => {
@@ -63,7 +70,7 @@ export default function ProductsSection() {
           <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 text-gray-900 ${zillaSlab.className}`}>
             Our Premium Products
           </h1>
-          <div className="flex justify-center items-center min-h-[400px]">
+          <div className="flex justify-center items-center min-h-100">
             <PuffLoader
               color={"#D97706"}
               loading={loading}
@@ -85,7 +92,7 @@ export default function ProductsSection() {
           <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 sm:mb-12 text-gray-900 ${zillaSlab.className}`}>
             Our Premium Products
           </h1>
-          <div className="flex justify-center items-center min-h-[400px]">
+          <div className="flex justify-center items-center min-h-100">
             <div className="text-center">
               <p className="text-red-600 text-lg mb-4">{error}</p>
               <button

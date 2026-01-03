@@ -15,15 +15,27 @@ export default function AdminLoginPage() {
   })
   const [error, setError] = useState("")
 
-  const handleInputChange = (e) => {
+  interface FormData {
+    email: string
+    password: string
+    rememberMe: boolean
+  }
+
+  interface LoginResponse {
+    success: boolean
+    error?: string
+    data?: Record<string, unknown>
+  }
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, checked } = e.target
-    setFormData((prev) => ({
+    setFormData((prev: FormData) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }))
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsLoading(true)
     setError("")
@@ -70,7 +82,7 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <div className="relative bg-gradient-to-br from-amber-50 via-yellow-50 to-amber-100 py-14 px-4 pb-80 pt-20">
+    <div className="relative bg-linear-to-br from-amber-50 via-yellow-50 to-amber-100 py-14 px-4 pb-80 pt-20">
       {/* Background decoration - matching home page style */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmYmJmMjQiIGZpbGwtb3BhY2l0eT0iMC4xIj48Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyIi8+PC9nPjwvZz48L3N2Zz4=')] opacity-20"></div>
       
@@ -82,7 +94,7 @@ export default function AdminLoginPage() {
             {/* Header - consistent with home page branding */}
             <div className="text-center mb-8">
               <div className="flex justify-center mb-4">
-                <div className="bg-gradient-to-r from-amber-500 to-amber-600 p-3 rounded-full shadow-lg">
+                <div className="bg-linear-to-r from-amber-500 to-amber-600 p-3 rounded-full shadow-lg">
                   <Wheat className="h-8 w-8 text-white" />
                 </div>
               </div>

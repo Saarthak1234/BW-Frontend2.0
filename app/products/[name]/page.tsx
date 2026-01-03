@@ -15,12 +15,20 @@ const zillaSlab = Zilla_Slab({
   variable: "--font-zilla-slab",
 })
 
+interface Product {
+  name: string
+  image: string
+  shortDescription: string
+  description: string
+  [key: string]: any
+}
+
 export default function ProductDetailPage() {
   const params = useParams()
   const router = useRouter()
   const productName = params.name as string
 
-  const [product, setProduct] = useState(null)
+  const [product, setProduct] = useState<Product | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
